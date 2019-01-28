@@ -1,0 +1,37 @@
+<?php
+
+
+if ( ! function_exists( 'hrpro_reviews_is_review_active' ) ) {
+	/**
+	 * Handy function to check state of review
+	 *
+	 * @since 1.0.0
+	 */
+	function hrpro_reviews_is_review_active() {
+		return HRPro_Reviews::get_meta( '_bs_review_enabled' );
+	}
+}
+
+
+if ( ! function_exists( 'hrpro_reviews_get_total_rate' ) ) {
+	/**
+	 * Handy function to get total rate of review
+	 *
+	 * @since 1.0.0
+	 */
+	function hrpro_reviews_get_total_rate() {
+		return HRPro_Reviews()->generator()->calculate_overall_rate();
+	}
+}
+
+
+if ( ! function_exists( 'hrpro_reviews_get_review_type' ) ) {
+	/**
+	 * Handy function to get total rate of review
+	 *
+	 * @since 1.0.0
+	 */
+	function hrpro_reviews_get_review_type() {
+		return HRPro_Reviews::get_meta( '_bs_review_rating_type' );
+	}
+}
